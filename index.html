@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hills Market Companies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        
+        /* Advertisement Banner - Made longer horizontally */
+        .ad-banner {
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+            border-radius: 20px;
+            margin: 0 auto 40px;
+            padding: 20px;
+            width: 98%; /* Increased width */
+            max-width: 1400px; /* Increased max-width */
+            height: 120px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .ad-slides {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: slide 15s infinite;
+        }
+        
+        .ad-slide {
+            width: 33.33%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 40px;
+            color: white;
+        }
+        
+        .ad-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .ad-icon {
+            font-size: 2.5rem;
+            background: rgba(41, 40, 40, 0.2);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ad-text {
+            flex: 1;
+        }
+        
+        .ad-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .ad-desc {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .ad-button {
+            background: white;
+            color: #ff4b2b;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .ad-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        @keyframes slide {
+            0%, 25% { transform: translateX(0); }
+            33%, 58% { transform: translateX(-33.33%); }
+            66%, 91% { transform: translateX(-66.66%); }
+            100% { transform: translateX(0); }
+        }
+        
+        /* Main logo container - centered above companies */
+        .main-logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .umbrella-logo {
+            /* Removed circular background styling */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .umbrella-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            color: #384e64;
+            margin-bottom: 50px;
+            font-size: 1.2rem;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .logo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+        }
+        
+        .logo-item {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            width: 280px;
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .logo-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .logo-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 22px;
+            color: white;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .logo-1 {
+            background: linear-gradient(145deg, #ffffff, #ffffff);
+        }
+        
+        .logo-2 {
+            background: linear-gradient(145deg, #ffffff, #ffffff);
+        }
+        
+        .logo-3 {
+            background: linear-gradient(145deg, #ffffff, #ffffff);
+        }
+        
+        .logo-text {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .visit-text {
+            color: #7f8c8d; /* Changed to visible color */
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            color: #7f8c8d; /* Changed to visible color */
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 900px) {
+            .logo-grid {
+                gap: 25px;
+            }
+            
+            .logo-item {
+                width: 240px;
+                height: 240px;
+            }
+            
+            .logo-img {
+                width: 150px;
+                height: 150px;
+                font-size: 18px;
+            }
+            
+            .ad-title {
+                font-size: 1.2rem;
+            }
+            
+            .ad-desc {
+                font-size: 0.9rem;
+            }
+            
+            .ad-icon {
+                font-size: 2rem;
+                width: 50px;
+                height: 50px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .logo-grid {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+            
+            .ad-banner {
+                height: 100px;
+                width: 95%; /* Adjusted for mobile */
+            }
+            
+            .ad-title {
+                font-size: 1rem;
+            }
+            
+            .ad-desc {
+                font-size: 0.8rem;
+            }
+            
+            .ad-icon {
+                font-size: 1.5rem;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .ad-button {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Advertisement Banner - Made longer horizontally -->
+    <div class="ad-banner">
+        <div class="ad-slides">
+            <div class="ad-slide">
+                <div class="ad-content">
+                    <div class="ad-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <div class="ad-text">
+                        <div class="ad-title">SUMMER SALE: Up to 50% OFF</div>
+                        <div class="ad-desc">Limited time offer on all products. Don't miss out!</div>
+                    </div>
+                    <button class="ad-button">Shop Now</button>
+                </div>
+            </div>
+            <div class="ad-slide">
+                <div class="ad-content">
+                    <div class="ad-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <div class="ad-text">
+                        <div class="ad-title">FREE Shipping on Orders Over R550</div>
+                        <div class="ad-desc">Fast delivery to your doorstep within 2 business days</div>
+                    </div>
+                    <button class="ad-button">Learn More</button>
+                </div>
+            </div>
+            <div class="ad-slide">
+                <div class="ad-content">
+                    <div class="ad-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="ad-text">
+                        <div class="ad-title">New Customer Offer: 15% OFF</div>
+                        <div class="ad-desc">Use code WELCOME15 at checkout for your first purchase</div>
+                    </div>
+                    <button class="ad-button">Get Code</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main logo centered at the top -->
+    <div class="main-logo-container">
+        <div class="umbrella-logo">
+            <!-- Logo without circular background -->
+            <img src="mainlogo.png" alt="Hills Market Group Logo" width="300">
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1>Our Companies</h1>
+        <p class="subtitle">Discover the diverse range of businesses under the Hills Market umbrella. Click on any logo to visit their website and explore their offerings.</p>
+        
+        <div class="logo-grid">
+            <div class="logo-item" onclick="window.open('https://hills-motors-and-solar-energy-life.vercel.app/')">
+                <div class="logo-img logo-1">
+                    <img src="223.png" alt="Hills Foods Logo" class="logo">
+                </div>
+                <div class="logo-text">Car Dealership</div>
+                <div class="visit-text">Click to visit</div>
+            </div>
+            
+            <div class="logo-item" onclick="window.open('https://hills-market-website.vercel.app/')">
+                <div class="logo-img logo-2">
+                    <img src="ANewlogo.jpg" alt="Student E-commerce Logo" class="logo">
+                </div>
+                <div class="logo-text">Student E-commerce</div>
+                <div class="visit-text">Click to visit</div>
+            </div>
+            
+            <div class="logo-item" onclick="window.open('https://4-0-market-eas1.vercel.app/')">
+                <div class="logo-img logo-3">
+                    <img src="4market.jpg" alt="Electronics Logo" class="logo">
+                </div>
+                <div class="logo-text">iPhones & Electronics</div>
+                <div class="visit-text">Click to visit</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2025 Hills Market Group. All rights reserved.</p>
+    </div>
+</body>
+</html>
